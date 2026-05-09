@@ -3,4 +3,3 @@
 *.pkl
 venv/
 __pycache__/
-data/
