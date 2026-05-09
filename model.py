@@ -29,7 +29,7 @@ log = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 # Paths
 # ---------------------------------------------------------------------------
-DATA_DIR = Path("data")
+DATA_DIR = Path("Data")
 MOVIES_CSV = DATA_DIR / "tmdb_5000_movies.csv"
 CREDITS_CSV = DATA_DIR / "tmdb_5000_credits.csv"
 OUT_MOVIES = Path("movie_dict.pkl")
