@@ -17,7 +17,15 @@ from dotenv import load_dotenv
 # ---------------------------------------------------------------------------
 # Setup
 # ---------------------------------------------------------------------------
-load_dotenv()  # reads .env file if present (safe no-op if absent)
+load_dotenv()
+
+import subprocess
+import sys
+
+if not os.path.exists("movie_dict.pkl") or not os.path.exists("similarity.pkl"):
+    subprocess.run([sys.executable, "model.py"], check=True)
+
+  # reads .env file if present (safe no-op if absent)
 
 logging.basicConfig(level=logging.WARNING, format="%(levelname)s: %(message)s")
 log = logging.getLogger(__name__)
