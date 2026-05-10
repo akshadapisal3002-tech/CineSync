@@ -42,7 +42,9 @@ OUT_SIMILARITY = Path("similarity.pkl")
 def load_raw_data() -> pd.DataFrame:
     log.info("Loading raw data …")
     movies = pd.read_csv(MOVIES_CSV)
-    credits = pd.read_csv(CREDITS_CSV)
+    credits1 = pd.read_csv(DATA_DIR / "credits_part1.csv")
+    credits2 = pd.read_csv(DATA_DIR / "credits_part2.csv")
+    credits = pd.concat([credits1, credits2], ignore_index=True)
     df = movies.merge(credits, on="title")
     log.info("  Merged shape: %s", df.shape)
     return df
